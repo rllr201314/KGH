@@ -28,21 +28,14 @@ export default {
         },
         //实时显示该图片在页面 预览
         yulan(){
-<<<<<<< HEAD
             var that = this;
-=======
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
             document.getElementById('saveImage').onchange = function () {
                 var imgFile = this.files[0];
                 var fr = new FileReader();
                 fr.onload = function () {
-<<<<<<< HEAD
                     // document.getElementById('portrait').src = fr.result;
                     that.imageSave = fr.result;
                     that.$emit('sendImage',that.imageSave)
-=======
-                    document.getElementById('portrait').src = fr.result;
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
                 };
                 fr.readAsDataURL(imgFile);
             }

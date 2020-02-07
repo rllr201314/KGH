@@ -33,10 +33,6 @@ export default {
             
         }
     },
-<<<<<<< HEAD
-    methods:{
-
-=======
     methods: {
 
         getData1(){
@@ -50,7 +46,6 @@ export default {
     },
     mounted(){
         this.getData1();
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
     }
 
 }

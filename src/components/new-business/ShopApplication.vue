@@ -15,50 +15,26 @@
                 <li>
                     <span>*</span>
                     <span>店铺名称</span>
-<<<<<<< HEAD
                     <input type="text" placeholder="3-15汉字/字母/数字" v-model="requestData.shop_name" maxlength="15"/>
                 </li>
                 <li>
                     <span>*</span>
                     <span>业务内容描述</span>
                     <input type="text" placeholder="请输入所要经营的游戏" v-model="requestData.business_intro"/>
-=======
-                    <input type="text" placeholder="3-15汉字/字母/数字" />
-                </li>
-                <!-- <li>
-                    <span>*</span>
-                    <span>主营游戏</span>
-                    <input type="text" placeholder="请输入所要经营的游戏">
-                </li>-->
-                <li>
-                    <span>*</span>
-                    <span>业务内容描述</span>
-                    <!-- <DropDownList3/> -->
-                    <input type="text" placeholder="请输入所要经营的游戏" />
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
                 </li>
                 <li>
                     <span>*</span>
                     <span>店铺简介</span>
-<<<<<<< HEAD
                     <input type="text" placeholder="店铺的简要描述" v-model="requestData.shop_intro"/>
-=======
-                    <input type="text" placeholder="店铺的简要描述" />
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
                 </li>
                 <li>
                     <span>*</span>
                     <span>申请原因</span>
-<<<<<<< HEAD
                     <input type="text" placeholder="申请店铺的原因" v-model="requestData.reason" />
-=======
-                    <input type="text" placeholder="申请店铺的原因" />
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
                 </li>
                 <li>
                     <span>*</span>
                     <span>联系方式</span>
-<<<<<<< HEAD
                     <input type="number" placeholder="请输入有效11位电话号码，平台将在24内与您联系" v-model="requestData.mobile" />
                 </li>
                 <Sc class="sc"  @sendImage="getImage" />
@@ -66,15 +42,6 @@
         </div>
 
         <div class="ShopApplication-button" @click="submitData">立即申请</div>
-=======
-                    <input type="number" placeholder="请输入有效11位电话号码，平台将在24内与您联系" />
-                </li>
-                <Sc class="sc" />
-            </ul>
-        </div>
-
-        <div class="ShopApplication-button">立即申请</div>
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
 
         <div class="ShopApplication_notice">
             <span
@@ -83,31 +50,21 @@
                 v-text="item.ShopApplication_notice1"
             ></span>
         </div>
-<<<<<<< HEAD
         <Loading v-show="showLoading"></Loading>
-=======
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
     </div>
 </template>
 <script>
 import Header from '@/components/home-page/Header'
 import DropDownList3 from './DropDown/DropDownList3'
 import Sc from './Sc'
-<<<<<<< HEAD
 import Loading from '@/components/multi/loading'
-=======
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
 export default {
     name: "ShopApplication",
     components: {
         Header,
         DropDownList3,
-<<<<<<< HEAD
         Sc,
         Loading
-=======
-        Sc
->>>>>>> d36715b0293487ee06b781a3275677f46483d36f
     },
     data() {
         return {
