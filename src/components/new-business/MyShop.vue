@@ -120,6 +120,22 @@ export default {
     },
     methods: {
 
+<<<<<<< HEAD
+=======
+        getData(){
+            var that = this;
+            that.$axios.post(process.env.API_HOST + 'shopInfo').then((res) => {
+                console.log(res);
+                
+            })
+
+            
+        }
+
+    },
+    mounted(){
+        this.getData();
+>>>>>>> d36715b0293487ee06b781a3275677f46483d36f
     }
 
 }

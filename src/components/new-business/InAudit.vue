@@ -33,8 +33,24 @@ export default {
             
         }
     },
+<<<<<<< HEAD
     methods:{
 
+=======
+    methods: {
+
+        getData1(){
+            var that = this;
+            that.$axios.post(`${that.baseURL}openStatus`).then((res) => {
+                console.log(res);
+                
+            })
+        }
+
+    },
+    mounted(){
+        this.getData1();
+>>>>>>> d36715b0293487ee06b781a3275677f46483d36f
     }
 
 }
