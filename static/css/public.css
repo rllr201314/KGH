@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: text;
+}
+
+body {
+  /* line-height: .4rem; */
+  background: #f7f8fd;
+}
+
+.wrap {
+  max-width: 7.5rem;
+  margin: 0 auto;
+  padding-top: .86rem;
+  box-shadow: 0 -3px 0.03rem 0 rgba(0, 0, 0, .5);
+  min-height: 100vh;
+}
+
+.title-search-wrap {
+  padding-top: 1.49rem;
+}
+
+.mui-popover.mui-popover-action.mui-active {
+  max-width: 640px;
+  min-width: 300px;
+}
+
+.pswp {
+  z-index: 10000 !important;
+}
+
+.black-color {
+  color: #333333;
+}
+
+.flex-box {
+  display: flex;
+}
+.nextBtn {
+  color: #ffffff;
+  font-size: 0.28rem;
+  margin: 0.4rem auto 0;
+  width: 6.5rem;
+  text-align: center;
+  line-height: 0.8rem;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 1px 2px #fd895c;
+  background: #ffa303;
+} 
+.get-code {
+  display: inline-block;
+  color: #FFA303;
+  font-size: 0.22rem;
+  line-height: 0.6rem;
+  width: 1.9rem;
+  text-align: center;
+  border: 1px solid #FFA303;
+  -webkit-border-radius: 0.15rem;
+  -moz-border-radius: 0.15rem;
+  border-radius: 0.15rem;
+  vertical-align: middle;
+}
+
+.pitch-on{
+  color: #FFA303;
+  border: 1px solid #FFA303;
+  background-color: #FFE1AE;
+  background-image: url(../../../static/img/goodscreen/false_tag.png);
+  background-repeat: no-repeat;
+  background-size: 0.3rem 0.25rem;
+  background-position: right bottom;
+}
+
+.dominant-color{
+  color:#FFA303 !important;
+}
+.dominant-bg{
+  background-color: #FFA303;
+}
+.dominant-border{
+  border-color: #FFA303 !important;
+}
+
+.button{
+  background: -webkit-linear-gradient(#fd915f, #FFA303);
+  background: -o-linear-gradient(#fd915f, #FFA303);
+  background: -moz-linear-gradient(#fd915f, #FFA303);
+  background: linear-gradient(to right, #fd915f, #FFA303);
+}
+.switching{
+  color:#FFA303;
+  border-bottom:.04rem solid #FFA303;
+}
+.Verification{
+  color: #FFA303;
+  border: 1px solid #FFA303;
+}
+.red-top{
+  color: #ff8b45;
+  border-top: 0.05rem solid #FFA303;
+}
+.red-bg{
+    color: #FFA303;
+    border: 1px solid #FFA303;
+    background-color: #ffdbcf;
+    background-image: url(../../../../static/image/false_tag.png);
+}
+
+.red-color{
+  color: #FFA303;
+}
+
+/* 安全认证 设置交易密码 注册 登录*/
+.safe-strip, .register-strip, .login-strip{
+  display: flex;
+  align-items: center;
+}
+.register-strip, .login-strip{
+  height: .9rem;
+}
+
+/* 客服真伪鉴定 */
+.authent-strip-inp{
+  display: flex;
+  line-height: .76rem;
+}
+.authent-strip-inp .yz{
+  width: 71%;
+  height: .75rem;
+}
+

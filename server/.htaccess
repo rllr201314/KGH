@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_URI} ^/mobile/buy/detail/goods_id/([0-9]*).html$ [NC]
+  RewriteRule ^(.*)$ https://www.kangehao.com/details?goods_id=%1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/home/buy/detail/goods_id/([0-9]*).html$ [NC]
+  RewriteRule ^(.*)$ https://www.kangehao.com/details?goods_id=%1 [R=301,L]
+
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
