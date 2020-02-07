@@ -109,57 +109,54 @@ export default {
     methods: {
         submitData(){
             var that = this;
-            // that.showLoading = true;
-            // var that_req = that.requestData;
-            // if(that_req.shop_img == ""){
-            //     mui.alert("请选择店铺头像","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else if(that_req.shop_name == ""){
-            //     mui.alert("请输入店铺名称","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else if(that_req.business_intro == ""){
-            //     mui.alert("请输入业务内容描述","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else if(that_req.shop_intro == ""){
-            //     mui.alert("请输入店铺简介","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else if(that_req.reason == ""){
-            //     mui.alert("请输入申请原因","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else if(that_req.mobile == ""){
-            //     mui.alert("请输入联系方式","提示","确认","","div");
-            //     that.showLoading = false;
-            //     return false;
-            // }else{
-            //     var phoneReg = /^1[3-9][0-9]{9}$/g;
-            //     if(!that_req.mobile.match(phoneReg)){
-            //         mui.alert("您输入的手机号不正确","提示","确认","","div");
-            //         that.showLoading = false;
-            //         return false;
-            //     }
-            // }
-            // that.$axios.post(`${that.baseURL}openShop`,that_req).then(res => {
-            //     if(res.status == 200){
-            //         if(res.data.code == 200){
-            //             that.showLoading = false;
-            //             mui.alert(res.data.msg,'提示','确认',function(){
-            //                 that.$router.push({path:'/'})
-            //             },"div")
-            //         }else if(res.data.code == 400){
-            //             that.showLoading = false;
-            //             mui.alert(res.data.msg,'提示','确认',function(){
-            //                 that.$router.push({path:'/'})
-            //             },"div")
-            //         }
-            //     }
-            // })
-            that.$axios.post(`${that.baseURL}shopInfo`).then(res =>{
-                console.log(res)
+            that.showLoading = true;
+            var that_req = that.requestData;
+            if(that_req.shop_img == ""){
+                mui.alert("请选择店铺头像","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else if(that_req.shop_name == ""){
+                mui.alert("请输入店铺名称","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else if(that_req.business_intro == ""){
+                mui.alert("请输入业务内容描述","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else if(that_req.shop_intro == ""){
+                mui.alert("请输入店铺简介","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else if(that_req.reason == ""){
+                mui.alert("请输入申请原因","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else if(that_req.mobile == ""){
+                mui.alert("请输入联系方式","提示","确认","","div");
+                that.showLoading = false;
+                return false;
+            }else{
+                var phoneReg = /^1[3-9][0-9]{9}$/g;
+                if(!that_req.mobile.match(phoneReg)){
+                    mui.alert("您输入的手机号不正确","提示","确认","","div");
+                    that.showLoading = false;
+                    return false;
+                }
+            }
+            that.$axios.post(`${that.baseURL}openShop`,that_req).then(res => {
+                if(res.status == 200){
+                    if(res.data.code == 200){
+                        that.showLoading = false;
+                        mui.alert(res.data.msg,'提示','确认',function(){
+                            that.$router.push({path:'/'})
+                        },"div")
+                    }else if(res.data.code == 400){
+                        that.showLoading = false;
+                        mui.alert(res.data.msg,'提示','确认',function(){
+                            that.$router.push({path:'/'})
+                        },"div")
+                    }
+                }
             })
         },
         getImage(data){
