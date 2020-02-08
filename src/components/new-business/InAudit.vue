@@ -37,8 +37,8 @@ export default {
 
         getData(){
             var that = this;
-            that.$axios.post(`${that.baseURL}openStatus`).then((res) => {
-                console.log(res);
+            that.$axios.post(process.env.API_HOST + 'openStatus').then((res) => {
+                // console.log(res);
                 if(res.status == 200){
                     if(res.data.code == 200){
                         if(res.data.data.status == 1){
