@@ -122,8 +122,16 @@ export default {
 
         getData(){
             var that = this;
-            that.$axios.post(process.env.API_HOST + 'shopInfo').then((res) => {
-                console.log(res);
+            that.$axios.post(`${that.baseURL}shopInfo`).then((res) => {
+                if(res.status == 200){
+                    if(res.data.code == 200){
+
+                    }else if(res.data.code == 400){
+                        mui.alert(res.data.msg,'提示','确认',function(){
+                            that.$router.push({path:'/'})
+                        },"div")
+                    }
+                }
                 
             })
 

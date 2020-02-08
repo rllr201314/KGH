@@ -35,17 +35,27 @@ export default {
     },
     methods: {
 
-        getData1(){
+        getData(){
             var that = this;
             that.$axios.post(`${that.baseURL}openStatus`).then((res) => {
                 console.log(res);
-                
+                if(res.status == 200){
+                    if(res.data.code == 200){
+                        if(res.data.data.status == 1){
+                            //审核中
+                        }else if(res.data.data.status == 2){
+                            //拒绝，未通过审核或未申请
+                        }else if(res.data.data.status == 3){
+                            //审核已通过
+                        }
+                    }
+                }
             })
         }
 
     },
     mounted(){
-        this.getData1();
+        this.getData();
     }
 
 }

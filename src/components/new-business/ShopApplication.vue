@@ -57,7 +57,7 @@
 import Header from '@/components/home-page/Header'
 import DropDownList3 from './DropDown/DropDownList3'
 import Sc from './Sc'
-import Loading from '@/components/multi/loading'
+import Loading from '@/components/multi/Loading'
 export default {
     name: "ShopApplication",
     components: {
