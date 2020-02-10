@@ -1,12 +1,12 @@
 <template>
     <div class="shop-wrap">
         <div class="shop-tit flex-box">
-            <img class="shop-logo" :src="store_data.logo" alt />
+            <img class="shop-logo" :src="store_data.shop_img" alt />
             <div class="shop-name-box">
                 <div class="flex-box shop-name-top">
-                    <div class="shop-name" v-text="store_data.name"></div>
+                    <div class="shop-name" v-text="store_data.shop_name"></div>
                     <van-rate
-                        v-model="store_data.rate"
+                        v-model="store_data.star"
                         color="#FF721C"
                         void-color="#FFE3D2"
                         allow-half
@@ -17,27 +17,29 @@
                 <div class="flex-box">
                     <div class="good">
                         好评率：
-                        <span v-text="store_data.good"></span>
+                        <span v-text="store_data.percent"></span>
                     </div>
                     <div class="make">
                         最近成交：
-                        <span v-text="store_data.make"></span>单
+                        <span v-text="store_data.order_count"></span>单
                     </div>
                 </div>
             </div>
-            <div class="into" @click="intoShop(store_data.id)">进店</div>
+            <!-- <div class="into" @click="intoShop(store_data.shop_sn)">进店</div> -->
+            <div class="into" data-class="into" :data-shop_sn="store_data.shop_sn">进店</div>
         </div>
         <div class="shop-con flex-box">
-            <div class="shop-con-item" v-for="(ind,num) in store_data.imgs" :key="num">
-                <img class="shop-con-item-img" :src="ind.img" alt />
-                <div class="shop-item-con flex-box">
+            <div class="shop-con-item" v-for="(ind,num) in store_data.goods_info" :key="num" data-class="goods" :data-id="ind.goods_id">
+                <img class="shop-con-item-img" :src="ind.img_url"  alt  data-class="goods" :data-id="ind.goods_id"/>
+                <div class="shop-item-con flex-box" data-class="goods" :data-id="ind.goods_id">
                     <img
                         class="shop-item-icon"
                         src="../../../static/image/store/top-up.png"
                         v-if="ind.type == 1"
                         alt="充值"
                     />
-                    <div class="shop-item-des" v-text="ind.des"></div>
+                    <span v-text="ind.business_title" data-class="goods" :data-id="ind.goods_id"></span>
+                    <div class="shop-item-des" v-text="ind.goods_title" data-class="goods" :data-id="ind.goods_id"></div>
                 </div>
             </div>
         </div>
@@ -55,6 +57,9 @@ export default {
     methods: {
         intoShop(id) {
             this.$router.push({ name: 'ShopDetails', query: { id: id } })
+        },
+        toDetail(id){
+            console.log(id)
         }
     },
     mounted() {
@@ -116,6 +121,8 @@ export default {
         .shop-con-item {
             width: 1.82rem;
             line-height: 0.3rem;
+            position: relative;
+            z-index: 10;
             .shop-con-item-img {
                 width: 1.82rem;
                 height: 1.82rem;
@@ -123,13 +130,21 @@ export default {
             .shop-item-con {
                 font-size: 0;
                 align-items: center;
+                span{
+                    font-size: .12rem;
+                    background: #2867dd;
+                    padding: 0.02rem 0.05rem;
+                    border-radius: 0.1rem;
+                    margin-right: .1rem;
+                    color: #fff;
+                }
                 .shop-item-icon {
                     width: 0.5rem;
                     height: 0.23rem;
                     margin-right: 0.05rem;
                 }
                 .shop-item-des {
-                    width: 1.2rem;
+                    max-width: 1rem;
                     font-size: 0.16rem;
                     color: #333333;
                     overflow: hidden; /*超出的部分隐藏起来。*/
