@@ -69,9 +69,10 @@
                     <div class="operation-content" v-show="myData.userTypeOpt.usertype">
                         <div
                             class="cell buy-tit"
-                            v-for="item in myData.userTypeOpt.buyTit"
+                            v-for="(item,index) in myData.userTypeOpt.buyTit"
                             :class="item.name"
                             @click="goSele(item.link)"
+                            :key="index"
                         >
                             <img :src="item.imgSrc" alt />
                             <div v-text="item.val"></div>
@@ -81,9 +82,10 @@
                     <div class="operation-content" v-show="!myData.userTypeOpt.usertype">
                         <div
                             class="cell buy-tit"
-                            v-for="item in myData.userTypeOpt.sellTit"
+                            v-for="(item,index) in myData.userTypeOpt.sellTit"
                             :class="item.name"
                             @click="goSele(item.link)"
+                            :key="index"
                         >
                             <img :src="item.imgSrc" alt />
                             <div v-text="item.val"></div>
@@ -97,9 +99,10 @@
                     <div class="operation-content" v-show="myData.userTypeOpt.usertype">
                         <div
                             class="cell"
-                            v-for="item in myData.userTypeOpt.buyCon"
+                            v-for="(item,index) in myData.userTypeOpt.buyCon"
                             :class="item.name"
                             @click="goSele(item.link)"
+                            :key="index"
                         >
                             <img :src="item.imgSrc" alt />
                             <span v-text="item.val"></span>
@@ -112,9 +115,10 @@
                     <div class="operation-content" v-show="!myData.userTypeOpt.usertype">
                         <div
                             class="cell"
-                            v-for="item in myData.userTypeOpt.sellCon"
+                            v-for="(item,index) in myData.userTypeOpt.sellCon"
                             :class="item.name"
                             @click="goSele(item.link)"
+                            :key="index"
                         >
                             <img :src="item.imgSrc" alt />
                             <span v-text="item.val"></span>

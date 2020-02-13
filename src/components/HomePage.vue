@@ -269,58 +269,7 @@ export default {
       ],
       shop_tit: "店铺推荐",
       hand_tit: "手游黑科技",
-      shop_info: [
-        {
-          id: 1,
-          logo: "../../static/image/index/shop-logo.png",
-          name: "康康游戏交易专营店",
-          rate: 4.5,
-          good: "90%",
-          make: "123",
-          imgs: [
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            },
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            },
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            }
-          ]
-        },
-        {
-          id: 2,
-          logo: "../../static/image/index/shop-logo.png",
-          name: "康康游戏交易专营店",
-          rate: 4.5,
-          good: "90%",
-          make: "123",
-          imgs: [
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            },
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            },
-            {
-              img: "../../static/image/index/shop-1.png",
-              type: 1,
-              des: "梦话西游各种1231231231"
-            }
-          ]
-        }
-      ]
+      shop_info: []
     };
   },
   computed: {
@@ -374,11 +323,13 @@ export default {
         sessionStorage.buyOrsell = 1;
       } else if (id == 2) {
         //道具
+        that.$router.push({name:"Prop"})
       } else if (id == 3) {
         //金币号
         that.$router.push({ name: "GoldGoods" });
       } else if (id == 4) {
         //礼包
+        that.$router.push({name:"Gift"})
       } else if (id == 5) {
         //分期
         that.$router.push({ name: "CbgStage" });
@@ -432,7 +383,7 @@ export default {
     goDetail(id) {
       let that = this;
       console.log(that.goods_data);
-      console.log(goods_id);
+      console.log(id);
       // that.$router.push({ name: "Details", params: { goods_id: id } });
     },
     _isMobile() {
@@ -468,8 +419,6 @@ export default {
         },
         onClick: function(swiper, event) {
           let dataset = event.target.dataset;
-
-          console.log(dataset);
           if (dataset.class == "into") {
             that.$router.push({
               name: "ShopDetails",

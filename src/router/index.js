@@ -614,5 +614,17 @@ export default new Router({
       name:"CardDetails",
       component:(resolve)=>require(['@/components/recharge-area/CardDetails'],resolve)
     },
+    //礼包
+    {
+      path:"/gift",
+      name:"Gift",
+      component:(resolve)=>require(['@/components/multi/SellPage'],resolve)
+    },
+    //道具
+    {
+      path:"/prop",
+      name:"Prop",
+      component:(resolve)=>require(['@/components/multi/SellPage'],resolve)
+    }
   ],
 })

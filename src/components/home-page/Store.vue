@@ -26,7 +26,7 @@
                 </div>
             </div>
             <!-- <div class="into" @click="intoShop(store_data.shop_sn)">进店</div> -->
-            <div class="into" data-class="into" :data-shop_sn="store_data.shop_sn">进店</div>
+            <div class="into" data-class="into" :data-shop_sn="store_data.shop_sn"  @click="intoShop(store_data.shop_sn)">进店</div>
         </div>
         <div class="shop-con flex-box">
             <div class="shop-con-item" v-for="(ind,num) in store_data.goods_info" :key="num" data-class="goods" :data-id="ind.goods_id">
@@ -56,6 +56,7 @@ export default {
     props: ['store_data'],
     methods: {
         intoShop(id) {
+            console.log(id)
             this.$router.push({ name: 'ShopDetails', query: { id: id } })
         },
         toDetail(id){
