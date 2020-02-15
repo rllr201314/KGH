@@ -797,7 +797,7 @@ export default {
     text-align: center;
     line-height: 0.3rem;
     display: inline-block;
-    background: url(../../../static/img/cbg/message.png) no-repeat;
+    background: url(../../../static/image/cbg/message.png) no-repeat;
     background-size: 0.53rem 0.36rem;
     position: absolute;
     top: -0.15rem;

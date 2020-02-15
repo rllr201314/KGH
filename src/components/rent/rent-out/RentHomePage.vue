@@ -129,7 +129,10 @@
         </div>
         <!-- 店铺 -->
         <div class="shop">
-            <div class="down-wrap-title" v-text="shop_title"></div>
+            <div class="shop-title">
+                <div class="down-wrap-title" v-text="shop_title"></div>
+                <div class="down-wrap-title-right">更多</div>
+            </div>
             <div class="shop-swiper">
                 <div class="swiper-container" id="shopSwiper">
                     <div class="swiper-wrapper">
@@ -825,13 +828,26 @@ export default {
         box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.29);
         margin: 0.2rem 0;
         padding: 0 0.2rem;
-        .down-wrap-title {
-            color: #333333;
-            font-size: 0.28rem;
-            font-weight: 500;
-            font-family: PingFang SC;
-            padding: 0.2rem 0 0.15rem 0.1rem;
+        .shop-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .down-wrap-title {
+                color: #333333;
+                font-size: 0.28rem;
+                font-weight: 500;
+                font-family: PingFang SC;
+                padding: 0.2rem 0 0.15rem 0.1rem;
+            }
+            .down-wrap-title-right{
+                color: #FF721C;
+                font-size: .2rem;
+                font-family:PingFang SC;
+                font-weight:500;
+            }
         }
+        
+        
         .shop-item {
             padding-bottom: 0.56rem;
         }
