@@ -21,7 +21,7 @@ export default {
     font-size:.3rem;
     color:#FFA303;
     text-align: center;
-    line-height: .59rem;
+    line-height: .7rem;
     img{
         width: .21rem;
         height: .25rem;

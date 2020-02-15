@@ -573,7 +573,7 @@ export default {
 .game-wrap {
   background: #ffffff;
   margin-top: 0.2rem;
-  padding: 0.2rem 0.3rem 0 0.8rem;
+  padding: 0 0.3rem 0 0.8rem;
   border-radius: 0.1rem;
   box-shadow: 0 1px 10px #cccccc;
   .game-con {
@@ -793,6 +793,7 @@ export default {
 .hand-wrap {
   font-size: 0;
   margin: 0.2rem auto;
+  line-height: 0;
   .hand-img {
     width: 100%;
   }
