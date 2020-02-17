@@ -206,6 +206,17 @@
                         <img src="../../../static/img/order/next.png" alt />
                     </div>
                 </div>
+
+                <div class="sell-strip" @click="goSele('myShop')">
+                    <div class="left-strip pacd">
+                        <img src="../../../static/image/mycenter/shop.png" alt />
+                        <span>我的店铺</span>
+                    </div>
+                    <div class="right-opt">
+                        <img src="../../../static/img/order/next.png" alt />
+                    </div>
+                </div>
+
                 <div class="sell-strip" @click="goSele('authenticity')">
                     <div class="left-strip see">
                         <img src="../../../static/img/my-center/see.png" alt />
@@ -465,7 +476,6 @@ export default {
                 that.$router.push({ name: "Register" });
                 return false;
             }
-
             if (token == undefined || token == "") {
                 mui.confirm("请先登陆", "提示", ["取消", "确认"],
                     function (e) {
@@ -489,6 +499,9 @@ export default {
                 } else if (flag == "browseRecord") {
                     //浏览记录
                     that_r.push({ name: "BrowseRecord" });
+                } else if (flag == "myShop") {
+                    //我的店铺
+                    that_r.push({ name: "MyShop" });
                 } else if (flag == "collect") {
                     //收藏
                     that_r.push({ name: "Collect" });
@@ -997,7 +1010,7 @@ export default {
     height: 0.28rem;
 }
 .pacd img {
-    width: 0.23rem;
+    /* width: 0.23rem; */
     height: 0.27rem;
 }
 .see img {

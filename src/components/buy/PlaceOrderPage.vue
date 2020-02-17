@@ -819,7 +819,7 @@ export default {
     font-size: 0.28rem;
 }
 .goods-info-top img {
-    width: 0.1rem;
+    width: 0.06rem;
     height: 0.29rem;
     margin-left: 0.17rem;
     vertical-align: middle;

@@ -297,7 +297,7 @@ export default {
       font-size: 0.26rem;
       color: #555555;
       min-width: 1.2rem;
-      line-height: 0.4rem;
+      line-height: 0.35rem;
     }
     .synopsis-des {
       font-size: 0.22rem;

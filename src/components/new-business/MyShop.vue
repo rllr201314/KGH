@@ -123,6 +123,7 @@ export default {
         getData(){
             var that = this;
             that.$axios.post(`${that.baseURL}shopInfo`).then((res) => {
+                console.log(res);
                 if(res.status == 200){
                     if(res.data.code == 200){
 

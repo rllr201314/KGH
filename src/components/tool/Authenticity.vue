@@ -243,17 +243,17 @@ export default {
     position: absolute;
     top: 0.5rem;
     left: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .goback img {
     width: 0.16rem;
     height: 0.29rem;
-    position: absolute;
-    top: 4px;
-    left: 7px;
 }
 .header-content {
-    color: #333333;
-    font-weight: bold;
+    color: #ffffff;
+    /* font-weight: bold; */
 }
 .header-title-top {
     font-size: 0.4rem;
@@ -349,6 +349,7 @@ export default {
 .verifg-text {
     vertical-align: middle;
     display: inline-block;
+    line-height: .4rem;
 }
 .link-up {
     display: inline-block;
