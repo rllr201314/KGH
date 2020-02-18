@@ -5,20 +5,22 @@
         <div class="to-examine-main">
             <img :src="to_examine_img1" alt="">
             <div class="to-examine-box">
-                <span>申请审核中</span>
-                <span>平台将于T+1日内完成资料审核,并将审核结果以短信形式通知您</span>
+                <span v-text="audit_t"></span>
+                <span v-text="audit_d"></span>
             </div>
-            <img :src="to_examine_img2" alt="">
+            <img :src="to_examine_img2" alt="" @click="toHome">
         </div>
-
+        <Loading v-show="showLoading"></Loading>
     </div>
 </template>
 <script>
 import Header from '@/components/home-page/Header'
+import Loading from '@/components/multi/Loading'
 export default {
     name:"InAudit",
     components:{
-        Header
+        Header,
+        Loading
     },
     data(){
         return{
@@ -29,7 +31,10 @@ export default {
                 tit_text:'申请结果',
             },
             to_examine_img1:'../../../static/image/to-examine.png',
-            to_examine_img2:'../../../static/image/return-button.png'
+            to_examine_img2:'../../../static/image/return-button.png',
+            audit_t:'',
+            audit_d:'',
+            showLoading:true,
             
         }
     },
@@ -38,19 +43,28 @@ export default {
         getData(){
             var that = this;
             that.$axios.post(`${that.baseURL}openStatus`).then((res) => {
-                // console.log(res);
+                console.log(res);
                 if(res.status == 200){
                     if(res.data.code == 200){
+                        that.showLoading = false;
                         if(res.data.data.status == 1){
                             //审核中
+                            that.audit_t = '申请审核中';
+                            that.audit_d = '平台将于T+1日内完成资料审核,并将审核结果以短信形式通知您';
                         }else if(res.data.data.status == 2){
                             //拒绝，未通过审核或未申请
+                            that.audit_t = '审核拒绝';
+                            that.audit_d = '平台将于T+1日内完成资料审核,并将审核结果以短信形式通知您';
                         }else if(res.data.data.status == 3){
                             //审核已通过
+                            that.$router.push({name:'MyShop'})
                         }
                     }
                 }
             })
+        },
+        toHome(){
+            this.$router.push({path:'/'})
         }
 
     },

@@ -153,7 +153,7 @@ export default {
                     }else if(res.data.code == 400){
                         that.showLoading = false;
                         mui.alert(res.data.msg,'提示','确认',function(){
-                            that.$router.push({path:'/'})
+                            that.$router.push({name:'InAudit'})
                         },"div")
                     }
                 }

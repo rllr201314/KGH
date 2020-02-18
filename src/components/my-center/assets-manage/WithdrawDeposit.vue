@@ -286,7 +286,7 @@ import Loading from "@/components/multi/Loading";
     }
     input[type="number"]{
         -moz-appearance: textfield;
-        width: 90%;
+        width: 89%;
     }
     ::-webkit-input-placeholder { 
         color:#999999;
