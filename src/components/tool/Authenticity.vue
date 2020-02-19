@@ -248,8 +248,8 @@ export default {
     width: 0.16rem;
     height: 0.29rem;
     position: absolute;
-    top: 4px;
-    left: 7px;
+    top: 0.07rem;
+    left: 0.12rem;
 }
 .header-content {
     color: #333333;
