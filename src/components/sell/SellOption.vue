@@ -50,7 +50,8 @@
                 <div>请选择客户端</div>
                 <div class="search">
                     <img src="../../../static/img/search_ico.png" alt="">
-                    <input type="search" placeholder="搜索"  v-model="mobile_content" @keyup.13="show('m')" ref="input1" @blur="out('m')" @focus="focusFn">
+                    <input type="search" placeholder="搜索"  v-model="mobile_content" @keyup.13="show('m')" ref="input1" @change="out('m')" @focus="focusFn">
+                    <!-- <input type="search" placeholder="搜索" v-model="mobile_content"> -->
                 </div>
             </div>
             <!-- 手机系统 -->
@@ -73,7 +74,7 @@
                 <div class="server-area-box" v-if="showOpteration">
                     <div class="area-type-search">
                         <form action="javascript:return true;">
-                            <input type="search" placeholder="搜索" v-model="area_content" @keyup.13="show('a')" ref="input1" @blur="out('a')"  @focus="focusFn">
+                            <input type="search" placeholder="搜索" v-model="area_content" @keyup.13="show('a')" ref="input1" @change="out('a')"  @focus="focusFn">
                             <img class="search-area-ico" src="../../../static/img/search_ico.png" alt="">
                         </form>
                     </div>
@@ -84,7 +85,7 @@
                 <!-- 没有区的时候只显示服务器的 -->
                 <div class="server-area-box" v-if="!showOpteration">
                     <div class="area-type-search">
-                        <input type="search" placeholder="搜索" v-model="area_content" @keyup.13="show('s')" ref="input1" @blur="out('s')"  @focus="focusFn">
+                        <input type="search" placeholder="搜索" v-model="area_content" @keyup.13="show('s')" ref="input1" @change="out('s')"  @focus="focusFn">
                         <img class="search-area-ico" src="../../../static/img/search_ico.png" alt="">
                     </div>
                     <div class="area-type-content">
@@ -156,7 +157,7 @@ export default {
         },
         out(flag){
             // console.log(flag);
-            this.go_up = false;//隐藏键盘让弹出框下去
+            // this.go_up = false;//隐藏键盘让弹出框下去
             var that = this;
             if(flag == 'm'){
                 var text = that.mobile_content;

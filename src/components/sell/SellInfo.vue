@@ -1125,7 +1125,7 @@ export default {
                 for (var i in that.extend_attribute) {
                     if (that.extend_attribute[i].is_required == 1) {
                         if (extend_arr.indexOf(that.extend_attribute[i].attribute_id) == -1) {
-                            mui.alert(that.extend_attribute[i].title + '为空', "提示", "确认", "", "div");
+                            mui.alert(that.extend_attribute[i].title + '未输入或未选择', "提示", "确认", "", "div");
                             that.showLoading = false;
                             return false;
                         }
