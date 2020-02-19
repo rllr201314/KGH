@@ -479,6 +479,12 @@ export default {
                 }
             }
         },
+        // 点击遮罩层关闭
+        // display(){
+        //     this.showOrderShade=false;
+        //     this.showDownPayBox=false;
+        //     this.showStageBox = false
+        // },
         // 显示分期首付
         showOpera(opt) {
             if(opt == "downPay") {

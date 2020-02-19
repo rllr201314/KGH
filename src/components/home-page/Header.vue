@@ -39,8 +39,7 @@
         </div>
       </div>
 
-      <div class="shade" v-show="showShade1||isShowKind" @click="isShowKind?isShowKind = false:''"></div>
-
+      <div class="shade" v-show="showShade1" @click="showShade1 = false"></div>
 
     </div>
     <div class="head-box-1 head-box-0" v-if="head_data.show_type == 3">
