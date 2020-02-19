@@ -43,7 +43,7 @@ export default {
     },
     mounted(){
         this.yulan();//预览图片
-        this.monidianji();
+        // this.monidianji();
     },
     
 

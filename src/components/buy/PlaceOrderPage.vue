@@ -147,9 +147,10 @@
                         <div class="sele-opera downPay-right">
                             <div class="sele-downPay" @click="showOpera('downPay')">
                                 <span
-                                    v-for="item in downPayOpera"
+                                    v-for="(item,index) in downPayOpera"
                                     v-if="item.issele"
                                     v-text="item.name"
+                                    :key="index"
                                 ></span>
                                 <img src="../../../static/img/goodscreen/downsolid.png" alt />
                             </div>
@@ -165,14 +166,15 @@
                         <div class="sele-opera downPay-right">
                             <div class="sele-downPay" @click="showOpera('stage')">
                                 <span
-                                    v-for="item in stageOpera"
+                                    v-for="(item,index) in stageOpera"
                                     v-if="item.issele"
                                     v-text="item.name"
+                                    :key="index"
                                 ></span>
                                 <img src="../../../static/img/goodscreen/downsolid.png" alt />
                             </div>
                             <div class="gray-color">
-                                <div v-for="item in stageInfo">
+                                <div v-for="(item,index) in stageInfo" :key="index">
                                     <span
                                         class="periodsNum"
                                     >第{{item.cur_number}}期 ￥{{item.every_month_money}}</span>
@@ -254,10 +256,10 @@
 
         <div class="nextBtn" @click="goPayFn">下一步</div>
         <!-- 遮罩 -->
-        <div class="orderShade" v-show="showOrderShade"></div>
+        <div class="orderShade" v-show="showOrderShade" @click="showOrderShade = false; showDownPayBox = false;showStageBox = false"></div>
         <!-- 分期首付选项栏 -->
         <div class="stageBox" v-show="showDownPayBox">
-            <div class="stageBox-cell" v-for="item in downPayOpera" @click="seleDownPay(item.key)">
+            <div class="stageBox-cell" v-for="(item,index) in downPayOpera" :key="index" @click="seleDownPay(item.key)">
                 <img
                     :src="item.issele?'../../../static/img/order/okcheck.png':'../../../static/img/order/nocheck.png'"
                     alt
@@ -266,7 +268,7 @@
             </div>
         </div>
         <div class="stageBox" v-show="showStageBox">
-            <div class="stageBox-cell" v-for="item in stageOpera" @click="seleStage(item.key)">
+            <div class="stageBox-cell" v-for="(item,index) in stageOpera" :key="index" @click="seleStage(item.key)">
                 <img
                     :src="item.issele?'../../../static/img/order/okcheck.png':'../../../static/img/order/nocheck.png'"
                     alt
@@ -819,7 +821,7 @@ export default {
     font-size: 0.28rem;
 }
 .goods-info-top img {
-    width: 0.1rem;
+    width: 0.06rem;
     height: 0.29rem;
     margin-left: 0.17rem;
     vertical-align: middle;

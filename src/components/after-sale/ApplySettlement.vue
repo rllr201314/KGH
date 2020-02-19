@@ -5,7 +5,7 @@
         <div class="apply-con">
             <div class="apply-cell">
                 <div class="cell-tit">
-                    <img src="../../../static/img/goodscreen/vertical.png" alt="">
+                    <img src="../../../static/image/goodscreen/vertical.png" alt="">
                     <span>请提交理赔申请信息</span>
                 </div>
                 <div class="cell-con">
@@ -250,6 +250,7 @@ export default {
     height: 0.25rem;
     margin: 0 0 0 0.17rem;
     vertical-align: middle;
+    border-radius: .1rem;
 }
 .cell-con {
     padding-left: 0.2rem;
@@ -292,9 +293,9 @@ export default {
     text-decoration: underline;
     color: #fe7649;
 }
-.red-color {
+/* .red-color {
     color: #ff5e5e;
-}
+} */
 .sell-des {
     vertical-align: top;
     width: 1.3rem;

@@ -136,9 +136,9 @@ export default {
     position: relative;
     border-bottom:1px solid #E5E5E5;
 }
-.red-color{
+/* .red-color{
     color:#FE7649;
-}
+} */
 .guBtn{
     display: inline-block;
     width:1.1rem;

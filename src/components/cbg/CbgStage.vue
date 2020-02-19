@@ -206,7 +206,7 @@
             分期申请提交成功，我们会尽快为您审核。稍后会有短信提醒，请您注意查收
             <div class="okbtn button" @click="goApplyFn">确认</div>
         </div>
-        <div class="shade" v-show="apply_hint || show_count_per || showMenu_type" ></div>
+        <div class="shade" v-show="apply_hint || show_count_per || showMenu_type" @click="show_count_per = false" ></div>
          <!-- 商品类型 -->
         <div v-show="showMenu_type" class="type-mu">
             <div class="pop-view-tit option-gray">
@@ -797,7 +797,7 @@ export default {
     text-align: center;
     line-height: 0.3rem;
     display: inline-block;
-    background: url(../../../static/img/cbg/message.png) no-repeat;
+    background: url(../../../static/image/cbg/message.png) no-repeat;
     background-size: 0.53rem 0.36rem;
     position: absolute;
     top: -0.15rem;

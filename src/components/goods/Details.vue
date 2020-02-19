@@ -1601,6 +1601,7 @@ export default {
   height: 0.42rem;
   border-radius: 0.05rem;
   text-align: center;
+  line-height: 0.42rem;
   font-size: 0.24rem;
 }
 .okBtn {
