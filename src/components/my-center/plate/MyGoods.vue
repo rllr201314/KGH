@@ -72,10 +72,13 @@
                                                     class="account-type"
                                                     v-else-if="item.client_id == 3"
                                                 >安卓混服</div>
-                                                <div class="area" v-text="item.platform_name"></div>
+                                                <div class="zone-time">
+                                                    <div class="area" v-text="item.platform_name"></div>
+                                                    <div class="history-time" v-text="item.sort_time"></div>
+                                                </div>
                                             </div>
                                             <div class="order-des" v-text="item.goods_title"></div>
-                                            <div class="history-time" v-text="item.sort_time"></div>
+                                            <!-- <div class="history-time" v-text="item.sort_time"></div> -->
                                             <div class="price-status">
                                                 <span
                                                     class="good-price"
@@ -177,10 +180,13 @@
                                                     class="account-type"
                                                     v-else-if="item.client_id == 3"
                                                 >安卓混服</div>
-                                                <div class="area" v-text="item.platform_name"></div>
+                                                <div class="zone-time">
+                                                    <div class="area" v-text="item.platform_name"></div>
+                                                    <div class="history-time" v-text="item.sort_time"></div>
+                                                </div>
                                             </div>
                                             <div class="order-des" v-text="item.goods_title"></div>
-                                            <div class="history-time" v-text="item.sort_time"></div>
+                                            <!-- <div class="history-time" v-text="item.sort_time"></div> -->
                                             <div class="price-status">
                                                 <span
                                                     class="good-price"
@@ -296,10 +302,13 @@
                                                     class="account-type"
                                                     v-else-if="item.client_id == 3"
                                                 >安卓混服</div>
-                                                <div class="area" v-text="item.platform_name"></div>
+                                                <div class="zone-time">
+                                                    <div class="area" v-text="item.platform_name"></div>
+                                                    <div class="history-time" v-text="item.sort_time"></div>
+                                                </div>
                                             </div>
                                             <div class="order-des" v-text="item.goods_title"></div>
-                                            <div class="history-time" v-text="item.sort_time"></div>
+                                            <!-- <div class="history-time" v-text="item.sort_time"></div> -->
                                             <div class="price-status">
                                                 <span
                                                     class="good-price"
@@ -676,7 +685,7 @@ input[type=text] {
     margin-top: 0.2rem;
 }
 .arbitration-cell-top {
-    padding-left: 0.2rem;
+    /* padding-left: 0.2rem; */
 }
 .arbitration-box {
     display: flex;
@@ -685,14 +694,16 @@ input[type=text] {
 }
 .gameLog {
     margin: 0 0.2rem;
+    width: .8rem;
+    height: .8rem;
 }
 .gameLog img {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 100%;
+    height: 100%;
 }
 .orderInfo {
-    width: 5.3rem;
-    padding: 0.2rem 0;
+    /* width: 5.3rem; */
+    padding: 0.2rem 0.2rem .2rem 0;
     position: relative;
 }
 .orderInfo span {
@@ -779,13 +790,18 @@ input[type=text] {
 .gray {
     color: #999999;
 }
+.zone-time{
+    width: 3.91rem;
+    display: flex;
+    justify-content: space-between;
+}
 .history-time {
     color: #999999;
     font-size: 0.26rem;
     line-height: 0.4rem;
-    position: absolute;
+    /* position: absolute;
     top: 0.2rem;
-    right: 0;
+    right: 0; */
 }
 /* 头部------ */
 .goods-strip-title {
@@ -793,9 +809,10 @@ input[type=text] {
     font-size: 0.24rem;
     line-height: 0.36rem;
     margin-bottom: 0.1rem;
+    display: flex;
 }
 .goods-strip-title div {
-    display: inline-block;
+    /* display: inline-block; */
     vertical-align: middle;
 }
 /* 精品 */
@@ -892,6 +909,11 @@ input[type=text] {
 .area {
     font-size: 0.26rem;
     color: #999999;
+    width: 1.3rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    line-height: .4rem;
 }
 .list-box-wrap {
     position: relative;
